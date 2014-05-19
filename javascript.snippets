@@ -1,0 +1,81 @@
+snippet enabler.init "Generic Enabler Initialize code"
+
+if (Enabler.isInitialized()) {
+    enablerInitHandler();
+} else  {
+    Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitHandler);
+}
+
+function enablerInitHandler(e)  {
+
+  // start ad init animation
+  // load in your image assets
+  // call Enabler methods ect ...
+ 
+}
+endsnippet
+
+snippet us "use strict" !b
+"use strict";
+endsnippet
+
+snippet be "beforeEach" !b
+beforeEach (function(){
+  $1;
+});
+endsnippet
+
+
+snippet ae "afterEach" !b
+afterEach(function(){
+    
+});
+endsnippet
+
+
+
+snippet fn "function" 
+function $1(args){
+
+}
+endsnippet
+
+
+snippet ng.conf "Angular Config"
+app.config(function($stateProvider, $urlRouterProvider){
+  $stateProvider
+  .state('$1',{
+      url:'/$1',
+      templateUrl:'partials/$1.html'
+  })
+});
+endsnippet
+
+snippet ng.mod "Angular module"
+var app = angular.module('$1',[]);
+endsnippet
+
+
+snippet ng.dir "Angular directive"
+angular.module('myApp',[])
+        .directive('$1', function(){
+            return{
+                restrict: 'E', // directive scope is Element A - Attribute, C - Classname
+                replace: true, // replace original markup with Element
+                transclude: false, // not to copy original HTML DOM
+
+                link: function(scope, iElement, iAttrs, controller, transcludeFn) { // used only if the compile property is not defined
+
+                },
+
+                // compile: function(tElem, tAttrs) { // template Element, template attributes
+                // },
+
+                controller: function ($scope, $element, $attrs, $transclude, ){
+
+                }
+                // template: '' // template goes here if applicable
+                // templateUrl: 'directives/partials/myDirectivePartial.html' //
+            }
+});
+endsnippet

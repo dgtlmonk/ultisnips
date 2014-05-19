@@ -86,3 +86,36 @@ endsnippet
 snippet c.l "console.log()"
 console.log('$1');
 endsnippet
+
+snippet ng-doc5 "Angular H5 ready" !b
+<!doctype html>
+<html ng-app"$1">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body>
+
+<div ui-view>
+</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    
+<script>
+var app = angular.module('$1',['ui-router'])
+    .controller('$2',function(){
+
+    });
+</script>
+
+</body>
+</html>
+endsnippet
+
+snippet t "basic tag" b
+<${1:div}></${1/(\w+).*/$1/}>
+endsnippet

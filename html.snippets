@@ -89,7 +89,11 @@ endsnippet
 
 snippet ng-doc5 "Angular H5 ready" !b
 <!doctype html>
+<<<<<<< HEAD
 <html>
+=======
+<html ng-app"$1">
+>>>>>>> 46ed82a64080bf8060b177d7e82971601f7b72b6
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -97,7 +101,11 @@ snippet ng-doc5 "Angular H5 ready" !b
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
+<<<<<<< HEAD
 <body ng-app"$1">
+=======
+<body>
+>>>>>>> 46ed82a64080bf8060b177d7e82971601f7b72b6
 
 <div ui-view>
 </div>
@@ -116,8 +124,13 @@ var app = angular.module('$1',['ui-router'])
 </html>
 endsnippet
 
+<<<<<<< HEAD
 snippet t "basic tag" !b
 <${1:div}>
 $2
 </${1/(\w+).*/$1/}>
+=======
+snippet t "basic tag" b
+<${1:div}></${1/(\w+).*/$1/}>
+>>>>>>> 46ed82a64080bf8060b177d7e82971601f7b72b6
 endsnippet

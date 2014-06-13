@@ -1,0 +1,123 @@
+snippet doc5
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    
+    </body>
+</html>
+
+ 
+endsnippet
+
+
+
+snippet  e.src "Add Enabler JS" 
+<script src="http://s0.2mdn.net/ads/studio/Enabler.js" type="text/javascript"></script>
+endsnippet
+
+snippet e.i "Generic Enabler Initialize code"
+<script language="javascript">
+    if (Enabler.isInitialized()) {
+        enablerInitHandler();
+    } else  {
+        Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitHandler);
+    }
+
+    function enablerInitHandler(e)  {
+
+      // start ad init animation
+      // load in your image assets
+      // call Enabler methods ect ...
+     
+        if (!Enabler.isVisible()){
+            Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, adVisibleHandler);
+        } else {
+            adVisibleHandler();
+        }
+    }
+
+    function adVisibleHandler(){
+        // ad visible start animation ... 
+    }
+</script>
+endsnippet
+
+snippet e.pl  "Generic Enabler Polite Loader"
+ if (Enabler.isPageLoaded()){
+    onPageLoaded();
+ } else {
+    Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, onPageLoaded);
+ }
+
+ function onPageLoaded(e) {
+    // load in additional assets or add animation / video
+ }
+endsnippet
+
+snippet  e.x "Enabler Exit"
+    // usage document.getElementById('node-name').addEventListener('click', onExitNameHandler, false);
+    document.getElementById('$1').addEventListener('click', onExitNameHandler, false);
+
+    function onExitNameHandler(e){
+        Enabler.exit("exit_name");
+    }
+endsnippet
+
+snippet func "function" !b 
+function $1(){
+
+}
+endsnippet
+
+snippet ed "simple html"
+<html>
+ <body>
+ </body>
+</html>
+endsnippet
+
+snippet c.l "console.log()"
+console.log('$1');
+endsnippet
+
+snippet ng-doc5 "Angular H5 ready" !b
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body ng-app"$1">
+
+<div ui-view>
+</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    
+<script>
+var app = angular.module('$1',['ui-router'])
+    .controller('$2',function(){
+
+    });
+</script>
+
+</body>
+</html>
+endsnippet
+
+snippet t "basic tag" !b
+<${1:div}>
+$2
+</${1/(\w+).*/$1/}>
+endsnippet
